@@ -1,0 +1,21 @@
+name: Scan Cloudformation Template
+
+on:
+    push:
+        branches: ["main"]
+    pull_request:
+        branches: ["main"]
+    workflow_dispatch:
+
+jobs:
+    scan:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: AWS Sustainability Scanner GitHub Action
+              # You may pin to the exact commit or the version.
+              # uses: aws-actions/sustainability-scanner@d6067411fc5290a836e3ebcf388c746d83cf0e9f
+              uses: aws-actions/sustainability-scanner@v1
+             
+            
+    
